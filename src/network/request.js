@@ -14,9 +14,9 @@ export function request(config) {
   })
   //创建相应拦截
   instance.interceptors.response.use(res => {
-    return res;
-  }, error => {
-    return error;
+    return res.data;
+  }, err => {
+    return err;
   })
   //真正进行数据请求
   return instance(config)
